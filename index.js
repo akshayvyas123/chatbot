@@ -39,5 +39,5 @@ app.post('/webhook/', function (req, res) {
 
 
 
-   res.send('intentName');
+   res.send(intentName);
 })
