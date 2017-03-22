@@ -36,16 +36,6 @@ app.post('/webhook/', function (req, res) {
   var url1 = request.url;
   var body = [];
 
-res.setHeader('Content-Type', 'application/json');
- var responseBody = {
-      headers: headers,
-      method: method,
-      url: url1,
-      body: body
-    };
-
-    response.write(JSON.stringify(responseBody));
-    response.end();
 
 
 
