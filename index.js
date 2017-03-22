@@ -29,8 +29,7 @@ console.log('running on port ',app.get('port'))
 }) 
 
 
-app.post('/webhook/',function(req,res){
-
-   var keyName1=request.body.key;
-   res.send(keyName1);
-} )
+app.post('/', function (req, res) {
+   console.log("Got a POST request for the homepage");
+   res.send('Hello POST');
+})
