@@ -30,22 +30,18 @@ console.log('running on port ',app.get('port'))
 
 
 app.post('/webhook/', function (req, res) {
-   console.log("Got a POST request for the homepage1");
- var headers = req.headers;
-  var method = req.method;
-  
-  var body = [];
+
   
 
    
 
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    // Note: the 2 lines above could be replaced with this next one:
-    // response.writeHead(200, {'Content-Type': 'application/json'})
+    
 
     var responseBody = {
-      speech:'the news is all fine'
+      speech:'the news is all fine',
+      displayText:'finally i can show news'
     };
 
     res.write(JSON.stringify(responseBody));
