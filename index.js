@@ -35,10 +35,27 @@ app.post('/webhook/', function (req, res) {
   var method = request.method;
   var url1 = request.url;
   var body = [];
+  
+
+   
+
+    response.statusCode = 200;
+    response.setHeader('Content-Type', 'application/json');
+    // Note: the 2 lines above could be replaced with this next one:
+    // response.writeHead(200, {'Content-Type': 'application/json'})
+
+    var responseBody = {
+      headers: headers,
+      method: method,
+      url: url1,
+      body: body
+    };
+
+    response.write(JSON.stringify(responseBody));
+    response.end();
 
 
 
 
-
-   res.send('yay!');
+  // res.send('yay!');
 })
