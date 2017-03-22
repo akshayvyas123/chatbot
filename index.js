@@ -31,13 +31,24 @@ console.log('running on port ',app.get('port'))
 
 app.post('/webhook/', function (req, res) {
    console.log("Got a POST request for the homepage1");
-  var headers=req.headers;
-  var intentName=headers['x']
-  console.log(intentName);
+ var headers = request.headers;
+  var method = request.method;
+  var url1 = request.url;
+  var body = [];
+
+res.setHeader('Content-Type', 'application/json');
+ var responseBody = {
+      headers: headers,
+      method: method,
+      url: url1,
+      body: body
+    };
+
+    response.write(JSON.stringify(responseBody));
+    response.end();
 
 
 
 
-
-   res.send(intentName);
+   //res.send(intentName);
 })
