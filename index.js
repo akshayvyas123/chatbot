@@ -45,10 +45,7 @@ app.post('/webhook/', function (req, res) {
     // response.writeHead(200, {'Content-Type': 'application/json'})
 
     var responseBody = {
-      headers: headers,
-      method: method,
-     
-      body: body
+      speech:'the news is all fine'
     };
 
     res.write(JSON.stringify(responseBody));
