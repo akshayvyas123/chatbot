@@ -31,16 +31,16 @@ console.log('running on port ',app.get('port'))
 
 app.post('/webhook/', function (req, res) {
    console.log("Got a POST request for the homepage1");
- var headers = request.headers;
-  var method = request.method;
+ var headers = req.headers;
+  var method = req.method;
   
   var body = [];
   
 
    
 
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'application/json');
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json');
     // Note: the 2 lines above could be replaced with this next one:
     // response.writeHead(200, {'Content-Type': 'application/json'})
 
@@ -51,8 +51,8 @@ app.post('/webhook/', function (req, res) {
       body: body
     };
 
-    response.write(JSON.stringify(responseBody));
-    response.end();
+    res.write(JSON.stringify(responseBody));
+    res.end();
 
 
 
