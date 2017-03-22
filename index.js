@@ -30,6 +30,14 @@ console.log('running on port ',app.get('port'))
 
 
 app.post('/webhook/', function (req, res) {
-   console.log("Got a POST request for the homepage");
+   console.log("Got a POST request for the homepage1");
+  var headers=req.headers;
+  var intentName=headers['intentName']
+  console.log(intentName);
+
+
+
+
+
    res.send('Hello POST');
 })
