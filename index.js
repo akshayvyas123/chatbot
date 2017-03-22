@@ -33,7 +33,7 @@ app.post('/webhook/', function (req, res) {
    console.log("Got a POST request for the homepage1");
  var headers = request.headers;
   var method = request.method;
-  var url1 = request.url;
+  
   var body = [];
   
 
@@ -47,7 +47,7 @@ app.post('/webhook/', function (req, res) {
     var responseBody = {
       headers: headers,
       method: method,
-      url: url1,
+     
       body: body
     };
 
