@@ -93,29 +93,71 @@ var datajsonform=JSON.stringify(data);
  // };
    // res.write(JSON.stringify(responseBody));
    // res.end();
-var json = JSON.stringify({
-    data:{
-//          "speech":"hi ",
-//          "displayText":"there is good news",
+ var json = JSON.stringify({
+   data:{
+   
   "facebook": {
-    "text":"If you want to continue......continue!",
-    "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"Confirm Order",
-        "payload":"#receipt 1"
-      },
-        {
-        "content_type":"text",
-        "title":"Cancel Order",
-        "payload":"#receipt 0"
+   "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"receipt",
+        "recipient_name":"Vincent Chase",
+        "order_number":"12345678902",
+        "currency":"INR",
+        "payment_method":"Visa 2345",        
+        "order_url":"http://petersapparel.parseapp.com/order?order_id=123456",
+        "timestamp":n+"", 
+        "elements": inko,
+//            [
+//           {
+//             "title":"Classic White T-Shirt",
+//             "subtitle":"100% Soft and Luxurious Cotton",
+//             "quantity":2,
+//             "price":50,
+//             "currency":"USD",
+//             "image_url":"https://s-media-cache-ak0.pinimg.com/originals/33/d1/4c/33d14cb737e5b4658e6914621625f545.jpg"
+//           }
+//           {
+//             "title":"Classic Gray T-Shirt",
+//             "subtitle":"100% Soft and Luxurious Cotton",
+//             "quantity":1,
+//             "price":25,
+//             "currency":"USD",
+//             "image_url":"https://img.clipartfox.com/7865a54005ecf2a13f26251af9a1a1ca_chinese-food-clipart-image-chinese-food-clipart-noodles_1600-941.jpeg"
+//           }
+//         ]
+        "address":{
+          "street_1":"Road no 10",
+          "street_2":"Banjara Hills",
+          "city":"Hyderabad",
+          "postal_code":"500080",
+          "state":"TS",
+          "country":"IN"
+        },
+        "summary":{
+          "subtotal":sub,
+          "shipping_cost":sc,
+          "total_tax":tax,
+          "total_cost":total
+        },
+        "adjustments":[
+          {
+            "name":"New Customer Discount",
+            "amount":a1
+          },
+          {
+            "name":"₹20 Off Coupon",
+            "amount":a2
+          }
+        ]//ads
       }
-    ]
+    }
   }
-},
+   },//data
     source : "text"
-  })
-  res.end(json);
+  })//json
+
+  response.end(json)
 
 
 
