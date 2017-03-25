@@ -35,7 +35,11 @@ app.post('/webhook/', function (req, res)
     res.setHeader('Content-Type', 'application/json');
     
 
-
+    request('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=efe7d0056b3f440688d97aa0d13f76f1', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        console.log(body); // Show the HTML for the Modulus homepage.
+    }
+});
 
     var responseBody = 
    {
