@@ -35,6 +35,7 @@ app.post('/webhook/', function (req, res)
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     
+    console.log(req.body);
 
     request('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=efe7d0056b3f440688d97aa0d13f76f1', function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -43,21 +44,10 @@ app.post('/webhook/', function (req, res)
 
      var responseBody = 
    {
-    //data:{
+    
              "speech":a.articles[0].description,
           "displayText":"there is good news"
-    //}
- // "facebook": {
-   // "text":"Select a category",
-   // "quick_replies":
-     // {
-       // "content_type":"text",
-       // "title":"General",
-       // "payload":"#news general"
-     // }
-       //       }
-            
-  // }
+
   };
     res.write(JSON.stringify(responseBody));
     res.end();
