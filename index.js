@@ -94,6 +94,8 @@ var datajsonform=JSON.stringify(data);
 
 
     }
+    else
+    console.log('request failed');
 });
 
    
