@@ -39,16 +39,14 @@ app.post('/webhook/', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     
 
-    var responseBody = {
-      //speech:'the news is all fine',
-      displayText:'finally i can show news',
-      "facebook": {
-    "text":"Select a category"
-      }
 
 
-    };
-
+    var responseBody = 
+    {
+     "facebook": {
+      "text":"Select a category" 
+                 }
+  };
     res.write(JSON.stringify(responseBody));
     res.end();
 
