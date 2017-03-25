@@ -74,10 +74,10 @@ var datajsonform=JSON.stringify(data);
     uri: ' https://devapi.flydubai.com/res/v3/flights/1',
     body: datajsonform,
     method: 'POST'
-  }, function (err, res, body) {
+  }, function (error, response, body) {
    
    
-    if (!err && res.statusCode == 200) {
+    if (!error && response.statusCode == 200) {
         var a=JSON.parse(body)
         console.log(a);
        // console.log(a.serverDateTimeUTC); // Show the HTML for the Modulus homepage.
