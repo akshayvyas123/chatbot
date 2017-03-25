@@ -34,9 +34,9 @@ app.post('/webhook/', function (req, res)
  var reqparse=JSON.parse(req)
  if(reqparse.result.action == "bookflight")
  {
-   var a1=reparse.parameters.airportcode1;
-   var a2=reparse.parameters.airportcode2;
-   var date=reparse.parameters.date;
+   var a1=reparse.result.parameters.airportcode1;
+   var a2=reparse.result.parameters.airportcode2;
+   var date=reparse.result.parameters.date;
    console.log(a1);
    console.log(a2);
    console.log(a3);
@@ -46,7 +46,7 @@ app.post('/webhook/', function (req, res)
     
     
 
-    request('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=efe7d0056b3f440688d97aa0d13f76f1', function (error, response, body) {
+   request('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=efe7d0056b3f440688d97aa0d13f76f1', function (error, response, body) {
     if (!error && response.statusCode == 200) {
         var a=JSON.parse(body)
        console.log(a.articles[0].description); // Show the HTML for the Modulus homepage.
@@ -67,8 +67,8 @@ app.post('/webhook/', function (req, res)
      // }
        //       }
             
-   }
-  };
+   };
+  
     res.write(JSON.stringify(responseBody));
     res.end();
 
