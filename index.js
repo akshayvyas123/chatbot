@@ -41,18 +41,19 @@ app.post('/webhook/', function (req, res)
    {
     data:{
              "speech":"hi ",
-          "displayText":"there is good news",
-  "facebook": {
-    "text":"Select a category",
-    "quick_replies":
-      {
-        "content_type":"text",
-        "title":"General",
-        "payload":"#news general"
-      }
-              }
+          "displayText":"there is good news"
+    }
+ // "facebook": {
+   // "text":"Select a category",
+   // "quick_replies":
+     // {
+       // "content_type":"text",
+       // "title":"General",
+       // "payload":"#news general"
+     // }
+       //       }
             
-   }
+  // }
   };
     res.write(JSON.stringify(responseBody));
     res.end();
