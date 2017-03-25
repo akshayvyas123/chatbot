@@ -84,15 +84,39 @@ var datajsonform=JSON.stringify(data);
          console.log('...................................................................................');
        // console.log(a.serverDateTimeUTC); // Show the HTML for the Modulus homepage.
 
-     var responseBody = 
-   {
+  //   var responseBody = 
+  // {
     
-             "speech":'hi',
-          "displayText":"there is good news"
+    //         "speech":'hi',
+      //    "displayText":"there is good news"
 
-  };
-    res.write(JSON.stringify(responseBody));
-    res.end();
+ // };
+   // res.write(JSON.stringify(responseBody));
+   // res.end();
+var json = JSON.stringify({
+    data:{
+//          "speech":"hi ",
+//          "displayText":"there is good news",
+  "facebook": {
+    "text":"If you want to continue......continue!",
+    "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Confirm Order",
+        "payload":"#receipt 1"
+      },
+        {
+        "content_type":"text",
+        "title":"Cancel Order",
+        "payload":"#receipt 0"
+      }
+    ]
+  }
+},
+    source : "text"
+  })
+  res.end(json);
+
 
 
     }
