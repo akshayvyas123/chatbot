@@ -53,10 +53,10 @@ app.post('/webhook/', function (req, res)
 
      var responseBody = 
    {
-    //data:{
+    data:{
              "speech":a.articles[0].description,
           "displayText":"there is good news"
-    //}
+    }
  // "facebook": {
    // "text":"Select a category",
    // "quick_replies":
