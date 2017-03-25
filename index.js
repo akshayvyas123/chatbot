@@ -100,7 +100,7 @@ var json = JSON.stringify({
 //          "speech":"hi ",
 //          "displayText":"there is good news",
   "facebook": {
-    "attachment": {
+       "attachment": {
         "type": "template",
         "payload": {
             "template_type": "list",
@@ -204,11 +204,12 @@ var json = JSON.stringify({
             ]  
         }
     }
-}
-    
-},
+
+
+  },
     source : "text"
-  })
+    }
+  });
   res.end(json)
 }
 
