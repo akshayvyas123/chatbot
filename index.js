@@ -31,16 +31,16 @@ console.log('running on port ',app.get('port'))
 
 app.post('/webhook/', function (req, res) 
 {
- var reqparse=JSON.parse(req)
- if(reqparse.result.action == "bookflight")
- {
-   var a1=reparse.result.parameters.airportcode1;
-   var a2=reparse.result.parameters.airportcode2;
-   var date=reparse.result.parameters.date;
-   console.log(a1);
-   console.log(a2);
-   console.log(a3);
- } 
+// var reqparse=JSON.parse(req)
+// if(reqparse.result.action == "bookflight")
+// {
+   // var a1=reparse.result.parameters.airportcode1;
+  // var a2=reparse.result.parameters.airportcode2;
+  // var date=reparse.result.parameters.date;
+   //console.log(a1);
+  // console.log(a2);
+  // console.log(a3);
+ // } 
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     
