@@ -85,7 +85,7 @@ var datajsonform=JSON.stringify(data);
      var responseBody = 
    {
     
-             "speech":a.serverDateTimeUTC,
+             "speech":'hi',
           "displayText":"there is good news"
 
   };
