@@ -35,7 +35,12 @@ app.post('/webhook/', function (req, res)
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     
-    console.log(req.body.result.parameters.airportcode1);
+    var a1=req.body.result.parameters.airportcode1;
+    var a2=req.body.result.parameters.airportcode2;
+    var date=req.body.result.parameters.date;
+    console.log(a1);
+     console.log(a2);
+      console.log(date);
  
 
     request('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=efe7d0056b3f440688d97aa0d13f76f1', function (error, response, body) {
