@@ -46,7 +46,7 @@ app.post('/webhook/', function (req, res)
     var responseBody = 
    {
     //data:{
-             "speech":"hi ",
+             "speech":a.articles[0].description,
           "displayText":"there is good news"
     //}
  // "facebook": {
