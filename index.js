@@ -29,12 +29,8 @@ console.log('running on port ',app.get('port'))
 }) 
 
 
-app.post('/webhook/', function (req, res) {
-
-  
-
-   
-
+app.post('/webhook/', function (req, res) 
+{
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     
@@ -42,10 +38,21 @@ app.post('/webhook/', function (req, res) {
 
 
     var responseBody = 
-    {
-     "facebook": {
-      "text":"Select a category" 
-                 }
+   {
+    data:{
+//       "speech":"hi ",
+//          "displayText":"there is good news",
+  "facebook": {
+    "text":"Select a category",
+    "quick_replies":
+      {
+        "content_type":"text",
+        "title":"General",
+        "payload":"#news general"
+      }
+              }
+            
+   }
   };
     res.write(JSON.stringify(responseBody));
     res.end();
