@@ -43,7 +43,7 @@ app.post('/webhook/', function (req, res) {
       speech:'the news is all fine',
       displayText:'finally i can show news',
       "facebook": {
-    "text":"Select a category",
+    "text":"Select a category"
       }
 
 
