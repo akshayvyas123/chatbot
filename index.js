@@ -138,7 +138,7 @@ var json = JSON.stringify({
 
 
 
-    }
+    
     else
     console.log('request failed');
 });
