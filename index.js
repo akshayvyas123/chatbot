@@ -34,7 +34,8 @@ app.post('/webhook/', function (req, res)
 {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    
+    if(req.body.result.action == "bookflight")
+    {
     var a1=req.body.result.parameters.airportcode1;
     var a2=req.body.result.parameters.airportcode2;
     var date=req.body.result.parameters.date;
@@ -43,15 +44,48 @@ app.post('/webhook/', function (req, res)
       console.log(date);
  
 
-    request('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=efe7d0056b3f440688d97aa0d13f76f1', function (error, response, body) {
+ var data=
+ {
+  "promoCode": "PROMO",
+  "cabinClass": "economy",
+  "searchCriteria": [
+    {
+      "origin": a1,
+      "dest": a2,
+      "direction": "outBound",
+      "date": date,
+      "isOriginMetro": true,
+      "isDestMetro": false
+    }
+  ],
+  "paxInfo": {
+    "adultCount": 2,
+    "infantCount": 1,
+    "childCount": 1
+  }
+}
+
+var datajsonform=JSON.stringify(data);
+
+    request({
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    uri: ' https://devapi.flydubai.com/res/v3/flights/1',
+    body: datajsonform,
+    method: 'POST'
+  }, function (err, res, body) {
+   
+   
     if (!error && response.statusCode == 200) {
         var a=JSON.parse(body)
-        console.log(a.articles[0].description); // Show the HTML for the Modulus homepage.
+        console.log(a);
+       // console.log(a.serverDateTimeUTC); // Show the HTML for the Modulus homepage.
 
      var responseBody = 
    {
     
-             "speech":a.articles[0].description,
+             "speech":a.serverDateTimeUTC,
           "displayText":"there is good news"
 
   };
@@ -63,7 +97,7 @@ app.post('/webhook/', function (req, res)
 });
 
    
-
+    } // if bookflight ka end
 
 
   // res.send('yay!');
