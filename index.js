@@ -39,11 +39,8 @@ app.post('/webhook/', function (req, res)
     if (!error && response.statusCode == 200) {
         var a=JSON.parse(body)
         console.log(a.articles[0].description); // Show the HTML for the Modulus homepage.
-        
-    }
-});
 
-    var responseBody = 
+     var responseBody = 
    {
     //data:{
              "speech":a.articles[0].description,
@@ -64,6 +61,11 @@ app.post('/webhook/', function (req, res)
     res.write(JSON.stringify(responseBody));
     res.end();
 
+
+    }
+});
+
+   
 
 
 
