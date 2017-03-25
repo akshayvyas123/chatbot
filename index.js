@@ -29,7 +29,7 @@ console.log('running on port ',app.get('port'))
 }) 
 
 
-app.post('/webhook', function (req, res) 
+app.post('/webhook/', function (req, res) 
 {
 // var reqparse=JSON.parse(req)
 // if(reqparse.result.action == "bookflight")
@@ -52,10 +52,10 @@ app.post('/webhook', function (req, res)
    //    console.log(a.articles[0].description); // Show the HTML for the Modulus homepage.
 
      var responseBody = 
-   { }
+   { 
    // data:{
-       //      "speech":a.articles[0].description,
-     //     "displayText":"there is good news"
+            "speech":a.articles[0].description,
+          "displayText":"there is good news"
    // }
  // "facebook": {
    // "text":"Select a category",
