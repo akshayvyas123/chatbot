@@ -94,8 +94,8 @@ var datajsonform=JSON.stringify(data);
    // res.write(JSON.stringify(responseBody));
    // res.end();
 var body1=JSON.parse(body);
-var flightsava=body1.segments[0].route+"flightno:"
-+body1.segments[0].flights[0].IfId +" departure time :" +body1.segments[0].flights[0].stops.departureTime+"departure time :"+ body1.segments[0].flights[0].stops.arrivalTime;
+var flightsava=body1.segments[0].route +"flightno:"
++ body1.segments[0].flights[0].lfId +" departure time :" +body1.segments[0].flights[0].stops.departureTime+"departure time :"+ body1.segments[0].flights[0].stops.arrivalTime;
 
 var json = JSON.stringify({
     
