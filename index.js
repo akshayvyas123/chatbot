@@ -29,7 +29,7 @@ console.log('running on port ',app.get('port'))
 }) 
 
 
-
+var securitytoken="";
 app.post('/webhook/', function (req, res) 
 {
     res.statusCode = 200;
@@ -79,7 +79,7 @@ var datajsonform=JSON.stringify(data);
    
     if (!error && response.statusCode == 200) {
         var a=JSON.parse(body);
-        
+        console.log(response.securitytoken);
          console.log('...................................................................................');
        console.log(a.segments[0].flights);
          console.log('...................................................................................');
