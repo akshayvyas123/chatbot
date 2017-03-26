@@ -103,7 +103,7 @@ flightsava="route:" + body1.segments[0].route + "\n" +
 "flightno:" + body1.segments[0].flights[0].IfId +  "\n" +
  " departure time :" +  body1.segments[0].flights[0].departureTime+ "\n" +
 "arrival time :" + body1.segments[0].flights[0].arrivalTime 
- + "Price:" +  body1.segments[0].flights[0].fareTypes[0].fare.totalFare + "Dhirams\n\n";
+ + "Price:" +  body1.segments[0].flights[0].fareTypes[0].fare.totalFare + "Dhirams\n\n To book send yes";
  //flightsava=flightsava+flightsava1;
 //}
 var json = JSON.stringify({
