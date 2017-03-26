@@ -79,8 +79,8 @@ var datajsonform=JSON.stringify(data);
    
     if (!error && response.statusCode == 200) {
         var a=JSON.parse(body);
-        var responseparsed=JSON.parse(response);
-        console.log(responseparsed.securitytoken);
+       // var responseparsed=JSON.parse(response);
+        console.log(response.headers['securitytoken']);
          console.log('...................................................................................');
        console.log(a.segments[0].flights);
          console.log('...................................................................................');
