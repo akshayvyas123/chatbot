@@ -81,7 +81,7 @@ var datajsonform=JSON.stringify(data);
         var a=JSON.parse(body);
         
          console.log('...................................................................................');
-       console.log(a.segment[0].flights);
+       console.log(a.segments[0].flights);
          console.log('...................................................................................');
        // console.log(a.serverDateTimeUTC); // Show the HTML for the Modulus homepage.
 
