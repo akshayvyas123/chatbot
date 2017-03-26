@@ -95,11 +95,11 @@ var datajsonform=JSON.stringify(data);
    // res.end();
 
 var flightsava="flightno:"
-+response.body.segment.flights[0].lfId +" departure time :" +response.body.segment.flights[0].stops.departureTime+"departure time :"+ response.body.segment.flights[0].stops.arrivalTime;
++body.segment[0].flights[0].lfId +" departure time :" +body.segment[0].flights[0].stops.departureTime+"departure time :"+ body.segment[0].flights[0].stops.arrivalTime;
 
 var json = JSON.stringify({
     data:{
-        "speech":"flightsava",
+        "speech":flightsava,
          "displayText":"there is good news"
   
 }
