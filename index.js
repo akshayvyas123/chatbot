@@ -59,9 +59,9 @@ app.post('/webhook/', function (req, res)
     }
   ],
   "paxInfo": {
-    "adultCount": 2,
-    "infantCount": 1,
-    "childCount": 1
+    "adultCount": 1,
+    "infantCount": 0,
+    "childCount": 0
   }
 }
 
@@ -93,85 +93,17 @@ var datajsonform=JSON.stringify(data);
  // };
    // res.write(JSON.stringify(responseBody));
    // res.end();
-
+var flightsava="flightno:"
++response.body.segment[0].flights[0].ifld +" departure time :" +response.body.segment[0].flights[0].stops.departureTime+"departure time :"+ response.body.segment[0].flights[0].stops.arrivalTime;
 
 var json = JSON.stringify({
     data:{
-//          "speech":"hi ",
-//          "displayText":"there is good news",
-  "facebook": {
-       "attachment": {
-        "type": "template",
-        "payload": {
-            "template_type": "list",
-            "top_element_style": "compact",
-            "elements": [
-                {
-                    "title": "Classic White T-Shirt",
-                    "image_url": "",
-                    "subtitle": "100% Cotton, 200% Comfortable",
-                    "default_action": {
-                        "type": "web_url",
-                        "url": "",
-                        "messenger_extensions": true,
-                        "webview_height_ratio": "tall",
-                        "fallback_url": ""
-                    },
-                    "buttons": [
-                        {
-                            "title": "Buy",
-                            "type": "web_url",
-                            "url": "",
-                            "messenger_extensions": true,
-                            "webview_height_ratio": "tall",
-                            "fallback_url": ""                        
-                        }
-                    ]                
-                },
-                {
-                    "title": "Classic Blue T-Shirt",
-                    "image_url": "",
-                    "subtitle": "100% Cotton, 200% Comfortable",
-                    "default_action": {
-                        "type": "web_url",
-                        "url": "",
-                        "messenger_extensions": true,
-                        "webview_height_ratio": "tall",
-                        "fallback_url": ""
-                    },
-                    "buttons": [
-                        {
-                            "title": "Buy",
-                            "type": "web_url",
-                            "url": "",
-                            "messenger_extensions": true,
-                            "webview_height_ratio": "tall",
-                            "fallback_url": ""                        
-                        }
-                    ]                
-                },
-                {
-                            
-                }
-            ],
-             "buttons": [
-                {
-                    "title": "View More",
-                    "type": "postback",
-                    "payload": "payload"                        
-                }
-            ]  
-        }
-    }
-
-
-  },
-    source : "text"
-    }
-  });
-  res.end(json)
+        "speech":flightsava,
+         "displayText":"there is good news"
+  
 }
-
+});
+    }
 
 
     
