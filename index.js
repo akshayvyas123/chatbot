@@ -95,14 +95,14 @@ var datajsonform=JSON.stringify(data);
    // res.end();
 var body1=JSON.parse(body);
 var flightsava=""
-for (var i =0; i < body1.validationRules.numberOfFlightsShown ;1++)
+for (var i =0; i < body1.validationRules.numberOfFlightsShown ;i++)
 {
 var flightsava1="route:" + body1.segments[0].route + "\n" +
 "flightno:" + body1.segments[0].flights[i].lfId +  "\n" +
  " departure time :" +  body1.segments[0].flights[i].departureTime+ "\n" +
 "arrival time :" + body1.segments[0].flights[i].arrivalTime 
  + "Price:" +  body1.segments[0].flights[i].fareTypes[0].fare.totalFare + "Dhirams\n\n";
- flightsava=filghtsava+flightsava1;
+ flightsava=flightsava+flightsava1;
 }
 var json = JSON.stringify({
     
