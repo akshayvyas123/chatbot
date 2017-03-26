@@ -97,7 +97,8 @@ var body1=JSON.parse(body);
 var flightsava="route:" + body1.segments[0].route + "\n" +
 "flightno:" + body1.segments[0].flights[0].lfId +  "\n" +
  " departure time :" +  body1.segments[0].flights[0].departureTime+ "\n" +
- "departure time :" + body1.segments[0].flights[0].arrivalTime;
+ "arrival time :" + body1.segments[0].flights[0].arrivalTime
+ + "Price:" +  body1.segments[0].flights[0].fareTypes[0].fare.totalFare + "Dhirams";
 
 var json = JSON.stringify({
     
