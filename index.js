@@ -94,12 +94,16 @@ var datajsonform=JSON.stringify(data);
    // res.write(JSON.stringify(responseBody));
    // res.end();
 var body1=JSON.parse(body);
-var flightsava="route:" + body1.segments[0].route + "\n" +
+var flightsava=""
+for (var i =0; i < body1.validationRules.numberOfFlightsShown ;1++)
+{
+var flightsava1="route:" + body1.segments[0].route + "\n" +
 "flightno:" + body1.segments[0].flights[0].lfId +  "\n" +
  " departure time :" +  body1.segments[0].flights[0].departureTime+ "\n" +
- "arrival time :" + body1.segments[0].flights[0].arrivalTime
- + "Price:" +  body1.segments[0].flights[0].fareTypes[0].fare.totalFare + "Dhirams";
-
+ "arrival time :" + body1.segments[0].flights[0].arrivalTime 
+ + "Price:" +  body1.segments[0].flights[0].fareTypes[0].fare.totalFare + "Dhirams\n\n";
+ flightsava=filghtsava+flightsava1;
+}
 var json = JSON.stringify({
     
         "speech":flightsava,
