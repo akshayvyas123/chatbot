@@ -48,7 +48,7 @@ app.post('/webhook/', function (req, res)
       console.log(date);
  
 
- var j1=
+  j1=
  {
   "promoCode": "PROMO",
   "cabinClass": "economy",
