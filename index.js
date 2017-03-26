@@ -137,7 +137,7 @@ res.end(json);
       j2={
           "currency": "AED",
   "itineraryAction": 1,
-  "searchRequest":j1 
+  "searchRequest":String(j1) 
 
                     
       };
