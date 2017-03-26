@@ -94,9 +94,10 @@ var datajsonform=JSON.stringify(data);
    // res.write(JSON.stringify(responseBody));
    // res.end();
 var body1=JSON.parse(body);
-var flightsava=""
+var flightsava="";
 for (var i =0; i < body1.validationRules.numberOfFlightsShown ;i++)
 {
+    console.log(i);
 var flightsava1="route:" + body1.segments[0].route + "\n" +
 "flightno:" + body1.segments[0].flights[0].IfId +  "\n" +
  " departure time :" +  body1.segments[0].flights[i].departureTime+ "\n" +
