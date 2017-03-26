@@ -34,6 +34,7 @@ app.post('/webhook/', function (req, res)
 {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
+
     if(req.body.result.action == "bookflight")
     {
     var a1=req.body.result.parameters.airportcode1;
@@ -80,9 +81,9 @@ var datajsonform=JSON.stringify(data);
     if (!error && response.statusCode == 200) {
         var a=JSON.parse(body);
        // var responseparsed=JSON.parse(response);
-        console.log(response.headers['securitytoken']);
+        securitytoken=response.headers['securitytoken'];
          console.log('...................................................................................');
-       console.log(a.segments[0].flights);
+       console.log(a);
          console.log('...................................................................................');
        // console.log(a.serverDateTimeUTC); // Show the HTML for the Modulus homepage.
 
@@ -126,6 +127,13 @@ res.end(json);
 
    
     } // if bookflight ka end
+
+
+  if(req.body.result.action == "flydubaibook")
+  {
+
+
+  }
 
 
   // res.send('yay!');
