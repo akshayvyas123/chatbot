@@ -98,10 +98,10 @@ var flightsava=""
 for (var i =0; i < body1.validationRules.numberOfFlightsShown ;1++)
 {
 var flightsava1="route:" + body1.segments[0].route + "\n" +
-"flightno:" + body1.segments[0].flights[0].lfId +  "\n" +
- " departure time :" +  body1.segments[0].flights[0].departureTime+ "\n" +
- "arrival time :" + body1.segments[0].flights[0].arrivalTime 
- + "Price:" +  body1.segments[0].flights[0].fareTypes[0].fare.totalFare + "Dhirams\n\n";
+"flightno:" + body1.segments[0].flights[i].lfId +  "\n" +
+ " departure time :" +  body1.segments[0].flights[i].departureTime+ "\n" +
+"arrival time :" + body1.segments[0].flights[i].arrivalTime 
+ + "Price:" +  body1.segments[0].flights[i].fareTypes[0].fare.totalFare + "Dhirams\n\n";
  flightsava=filghtsava+flightsava1;
 }
 var json = JSON.stringify({
