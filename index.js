@@ -108,9 +108,9 @@ flightsava1=
  + "Price:" +  ink.fareTypes[0].fare.totalFare + "Dhirams\n\n";
  flightsava=flightsava+flightsava1;
 }
-}
+})
 
-    }
+    
 var json = JSON.stringify({
     
         "speech":flightsava,
@@ -122,8 +122,7 @@ console.log("ss..........................................................1111111
 res.end(json);
     }
 
-
-    
+  
     else
     console.log('request failed');
 });
