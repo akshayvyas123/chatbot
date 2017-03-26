@@ -94,9 +94,9 @@ var datajsonform=JSON.stringify(data);
    // res.write(JSON.stringify(responseBody));
    // res.end();
 var body1=JSON.parse(body);
-var flightsava="route:" + body1.segments[0].route +
-"flightno:" + body1.segments[0].flights[0].lfId +
- " departure time :" +  body1.segments[0].flights[0].departureTime+ 
+var flightsava="route:" + body1.segments[0].route + "\n" +
+"flightno:" + body1.segments[0].flights[0].lfId +  "\n" +
+ " departure time :" +  body1.segments[0].flights[0].departureTime+ "\n" +
  "departure time :" + body1.segments[0].flights[0].arrivalTime;
 
 var json = JSON.stringify({
