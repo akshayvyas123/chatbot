@@ -78,9 +78,10 @@ var datajsonform=JSON.stringify(data);
    
    
     if (!error && response.statusCode == 200) {
-        var a=JSON.parse(body)
+        var a=JSON.parse(body);
+        
          console.log('...................................................................................');
-       console.log(a);
+       console.log(a.segment[0].flights);
          console.log('...................................................................................');
        // console.log(a.serverDateTimeUTC); // Show the HTML for the Modulus homepage.
 
