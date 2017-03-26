@@ -99,11 +99,11 @@ var flightsava="flightno:"
 //+body1.segments[0].flights[0].stops.departureTime+"departure time :"+ body1.segments[0].flights[0].stops.arrivalTime;
 
 var json = JSON.stringify({
-    data:{
+    
         "speech":flightsava,
          "displayText":"there is good news"
   
-}
+
 });
 console.log("...........................................................111111111111111111111111111111111111111111111111");
 res.end(json);
