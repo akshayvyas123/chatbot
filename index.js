@@ -30,6 +30,9 @@ console.log('running on port ',app.get('port'))
 
 
 var securitytoken="";
+var j1="";
+var body1="";
+var j2="";
 app.post('/webhook/', function (req, res) 
 {
     res.statusCode = 200;
@@ -45,7 +48,7 @@ app.post('/webhook/', function (req, res)
       console.log(date);
  
 
- var data=
+ var j1=
  {
   "promoCode": "PROMO",
   "cabinClass": "economy",
@@ -66,7 +69,7 @@ app.post('/webhook/', function (req, res)
   }
 }
 
-var datajsonform=JSON.stringify(data);
+var datajsonform=JSON.stringify(j1);
 
     request({
     headers: {
@@ -79,11 +82,11 @@ var datajsonform=JSON.stringify(data);
    
    
     if (!error && response.statusCode == 200) {
-        var a=JSON.parse(body);
+         j1=JSON.parse(body);
        // var responseparsed=JSON.parse(response);
         securitytoken=response.headers['securitytoken'];
          console.log('...................................................................................');
-       console.log(a);
+       
          console.log('...................................................................................');
        // console.log(a.serverDateTimeUTC); // Show the HTML for the Modulus homepage.
 
@@ -96,7 +99,7 @@ var datajsonform=JSON.stringify(data);
  // };
    // res.write(JSON.stringify(responseBody));
    // res.end();
-var body1=JSON.parse(body);
+ body1=JSON.parse(body);
 var flightsava="";
 //for (var i =0; i < body1.validationRules.numberOfFlightsShown ;i++)
 //{
@@ -130,9 +133,15 @@ res.end(json);
 
 
   if(req.body.result.action == "flydubaibook")
-  {
+  {     var searchstr=j1;
+      j2={
+          "currency": "AED",
+  "itineraryAction": 1,
+  "searchRequest":j1 
 
-
+                    
+      };
+console.log(j2);
   }
 
 
