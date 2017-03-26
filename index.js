@@ -93,8 +93,9 @@ var datajsonform=JSON.stringify(data);
  // };
    // res.write(JSON.stringify(responseBody));
    // res.end();
+var response1=JSON.parse(response)
 var flightsava="flightno:"
-+response.body.segment[0].flights[0].lfId +" departure time :" +response.body.segment[0].flights[0].stops.departureTime+"departure time :"+ response.body.segment[0].flights[0].stops.arrivalTime;
++response1.body.segment[0].flights[0].lfId +" departure time :" +response1.body.segment[0].flights[0].stops.departureTime+"departure time :"+ response1.body.segment[0].flights[0].stops.arrivalTime;
 
 var json = JSON.stringify({
     data:{
