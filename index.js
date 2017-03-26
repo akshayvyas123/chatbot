@@ -94,23 +94,18 @@ var datajsonform=JSON.stringify(data);
  // };
    // res.write(JSON.stringify(responseBody));
    // res.end();
-//var body1=JSON.parse(body);
+var body1=JSON.parse(body);
 var flightsava="";
-var filghtsava1="";
-body.segments[0].flights.foreach(function(ink)
-{
-{
-    console.log(i);
-flightsava1=
-"flightno:" + ink.IfId +  "\n" +
- " departure time :" +  ink.departureTime+ "\n" +
-"arrival time :" + ink.arrivalTime 
- + "Price:" +  ink.fareTypes[0].fare.totalFare + "Dhirams\n\n";
- flightsava=flightsava+flightsava1;
-}
-})
-
-    
+//for (var i =0; i < body1.validationRules.numberOfFlightsShown ;i++)
+//{
+  //  console.log(i);
+flightsava="route:" + body1.segments[0].route + "\n" +
+"flightno:" + body1.segments[0].flights[0].IfId +  "\n" +
+ " departure time :" +  body1.segments[0].flights[0].departureTime+ "\n" +
+"arrival time :" + body1.segments[0].flights[0].arrivalTime 
+ + "Price:" +  body1.segments[0].flights[0].fareTypes[0].fare.totalFare + "Dhirams\n\n";
+ //flightsava=flightsava+flightsava1;
+//}
 var json = JSON.stringify({
     
         "speech":flightsava,
@@ -122,7 +117,8 @@ console.log("ss..........................................................1111111
 res.end(json);
     }
 
-  
+
+    
     else
     console.log('request failed');
 });
