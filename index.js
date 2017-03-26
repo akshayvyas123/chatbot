@@ -4,7 +4,7 @@ const express=require('express')
 const bodyParser=require('body-parser')
 const request=require('request')
 const app=express()
-
+ var flightss="";
 app.set('port',(process.env.PORT))
 
 app.use(bodyParser.urlencoded({extended:false}))
@@ -33,6 +33,9 @@ var securitytoken="";
 var j1="";
 var body1="";
 var j2="";
+var a1="";
+var a2="";
+var date="";
 app.post('/webhook/', function (req, res) 
 {
     res.statusCode = 200;
@@ -40,9 +43,9 @@ app.post('/webhook/', function (req, res)
 
     if(req.body.result.action == "bookflight")
     {
-    var a1=req.body.result.parameters.airportcode1;
-    var a2=req.body.result.parameters.airportcode2;
-    var date=req.body.result.parameters.date;
+     a1=req.body.result.parameters.airportcode1;
+     a2=req.body.result.parameters.airportcode2;
+     date=req.body.result.parameters.date;
     console.log(a1);
      console.log(a2);
       console.log(date);
@@ -100,6 +103,7 @@ var datajsonform=JSON.stringify(j1);
    // res.write(JSON.stringify(responseBody));
    // res.end();
  body1=JSON.parse(body);
+  flightss=body1.segments.flights[0];
 var flightsava="";
 //for (var i =0; i < body1.validationRules.numberOfFlightsShown ;i++)
 //{
@@ -137,11 +141,39 @@ res.end(json);
       j2={
           "currency": "AED",
   "itineraryAction": 1,
-  "searchRequest":"" + j1
+  "searchRequest":
+  {
+  "promoCode": "PROMO",
+  "cabinClass": "economy",
+  "searchCriteria": [
+    {
+      "origin": a1,
+      "dest": a2,
+      "direction": "outBound",
+      "date": date,
+      "isOriginMetro": true,
+      "isDestMetro": false
+    }
+  ],
+  "paxInfo": {
+    "adultCount": 1,
+    "infantCount": 0,
+    "childCount": 0
+  }
+},
+ "passengerList": [
+    
+  ],
+  "preferences": {
+    "isReadyToSignUpForOffers": false
+  }
+
+  
 
                     
       };
 console.log(j2);
+console.log(flightss);
   }
 
 
