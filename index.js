@@ -94,10 +94,10 @@ var datajsonform=JSON.stringify(data);
  // };
    // res.write(JSON.stringify(responseBody));
    // res.end();
-var body1=JSON.parse(body);
+//var body1=JSON.parse(body);
 var flightsava="";
 var filghtsava1="";
-body1.segments[0].flights.foreach(function(ink)
+body.segments[0].flights.foreach(function(ink)
 {
 {
     console.log(i);
