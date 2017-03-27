@@ -115,7 +115,7 @@ flightsava="route:" + b1.segments[0].route + "\n" +
 "arrival time :" + b1.segments[0].flights[0].arrivalTime 
  + "Price:" +  b1.segments[0].flights[0].fareTypes[0].fare.totalFare + "Dhirams\n\n To book send yes";
  //flightsava=flightsava+flightsava1;
-}
+//}
 var json = JSON.stringify({
     
         "speech":flightsava,
