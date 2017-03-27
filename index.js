@@ -103,7 +103,7 @@ var datajsonform=JSON.stringify(j1);
    // res.write(JSON.stringify(responseBody));
    // res.end();
  body1=JSON.parse(body);
-  flightss=body1.segments.flights[0];
+  flightss=body1.segments[0].flights[0];
 var flightsava="";
 //for (var i =0; i < body1.validationRules.numberOfFlightsShown ;i++)
 //{
