@@ -109,8 +109,9 @@ var flightsava="";
 //for (var i =0; i < body1.validationRules.numberOfFlightsShown ;i++)
 //{
   //  console.log(i);
+     //b1.segments[0].flights[0].IfId
 flightsava="route:" + b1.segments[0].route + "\n" +
-"flightno:" + b1.segments[0].flights[0].IfId +  "\n" +
+"flightno: 292060" +  +  "\n" +
  " departure time :" +  b1.segments[0].flights[0].departureTime+ "\n" +
 "arrival time :" + b1.segments[0].flights[0].arrivalTime 
  + "Price:" +  b1.segments[0].flights[0].fareTypes[0].fare.totalFare + "Dhirams\n\n To book send yes";
