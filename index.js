@@ -73,6 +73,7 @@ app.post('/webhook/', function (req, res)
 }
 
 var datajsonform=JSON.stringify(j1);
+     console.log(j1);
 
     request({
     headers: {
@@ -85,11 +86,11 @@ var datajsonform=JSON.stringify(j1);
    
    
     if (!error && response.statusCode == 200) {
-         j1=JSON.parse(body);
+         b1=JSON.parse(body);
        // var responseparsed=JSON.parse(response);
         securitytoken=response.headers['securitytoken'];
          console.log('...................................................................................');
-       console.log(j1);
+       console.log(b1);
          console.log('...................................................................................');
        // console.log(a.serverDateTimeUTC); // Show the HTML for the Modulus homepage.
 
@@ -102,17 +103,17 @@ var datajsonform=JSON.stringify(j1);
  // };
    // res.write(JSON.stringify(responseBody));
    // res.end();
- body1=JSON.parse(body);
-  flightss=body1.segments[0].flights[0];
+
+  flightss=b1.segments[0].flights[0];
 var flightsava="";
 //for (var i =0; i < body1.validationRules.numberOfFlightsShown ;i++)
 //{
   //  console.log(i);
-flightsava="route:" + body1.segments[0].route + "\n" +
-"flightno:" + body1.segments[0].flights[0].IfId +  "\n" +
- " departure time :" +  body1.segments[0].flights[0].departureTime+ "\n" +
-"arrival time :" + body1.segments[0].flights[0].arrivalTime 
- + "Price:" +  body1.segments[0].flights[0].fareTypes[0].fare.totalFare + "Dhirams\n\n To book send yes";
+flightsava="route:" + b1.segments[0].route + "\n" +
+"flightno:" + b1.segments[0].flights[0].IfId +  "\n" +
+ " departure time :" +  b1.segments[0].flights[0].departureTime+ "\n" +
+"arrival time :" + b1.segments[0].flights[0].arrivalTime 
+ + "Price:" +  b1.segments[0].flights[0].fareTypes[0].fare.totalFare + "Dhirams\n\n To book send yes";
  //flightsava=flightsava+flightsava1;
 //}
 var json = JSON.stringify({
@@ -174,6 +175,16 @@ res.end(json);
       };
 console.log(j2);
 console.log(flightss);
+
+   var b2 = JSON.stringify({
+    
+        "speech":"Your flight is booked in the pay later mode",
+         "displayText":"there is good news"
+  
+
+});
+   
+res.end(b2);
   }
 
 
