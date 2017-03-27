@@ -89,7 +89,7 @@ var datajsonform=JSON.stringify(j1);
        // var responseparsed=JSON.parse(response);
         securitytoken=response.headers['securitytoken'];
          console.log('...................................................................................');
-       
+       console.log(j1);
          console.log('...................................................................................');
        // console.log(a.serverDateTimeUTC); // Show the HTML for the Modulus homepage.
 
