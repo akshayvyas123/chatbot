@@ -40,7 +40,7 @@ app.post('/webhook/', function (req, res)
 {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-
+console.log("We are inside webhook");
  if(req.body.result.action == "feelings")
  {
   console.log("We are inside the feelings code ");
