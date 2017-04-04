@@ -48,25 +48,25 @@ console.log("We are inside webhook");
      "speech":"hi ",
    "displayText":"there is good news",
     
-    data:{
+  //  data:{
 
-  "facebook": {
-    "text":"Tell me how do you feel?",
-    "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"Happy",
-        "payload":"#receipt 1"
-      },
-        {
-        "content_type":"text",
-        "title":"Sad",
-        "payload":"#receipt 0"
-      }
-    ]
-  }
-},
-    source : "text"
+ // "facebook": {
+   // "text":"Tell me how do you feel?",
+    //"quick_replies":[
+     // {
+       // "content_type":"text",
+       // "title":"Happy",
+       // "payload":"#receipt 1"
+    //  },
+      //  {
+      //  "content_type":"text",
+       // "title":"Sad",
+       // "payload":"#receipt 0"
+     // }
+   // ]
+ // }
+//},
+  //  source : "text"
   
 
 });
