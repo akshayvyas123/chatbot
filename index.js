@@ -46,18 +46,32 @@ console.log("We are inside webhook");
   console.log("We are inside the feelings code ");
    
     
- var v1 = JSON.stringify({
-    
-        "speech":"Your flight is booked in the pay later mode",
-         "displayText":"there is good news"
+ var json = JSON.stringify({
+    "data":{
+//          "speech":"hi ",
+//          "displayText":"there is good news",
+  "facebook": {
+    "text":"If you want to continue......continue!",
+    "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Confirm Order",
+        "payload":"#receipt 1"
+      },
+        {
+        "content_type":"text",
+        "title":"Cancel Order",
+        "payload":"#receipt 0"
+      }
+    ]
+  }
+},
+    "source" : "text"
+  })
+  res.end(json);
   
 
-});
-  
 
-   
-res.end(v1);
-  
  }
  
  
