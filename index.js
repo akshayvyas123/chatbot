@@ -45,7 +45,8 @@ app.post('/webhook/', function (req, res)
  {
   console.log("We are inside the feelings code ");
    var b2 = JSON.stringify({
-    
+     "speech":"hi ",
+   "displayText":"there is good news",
     
     data:{
 
