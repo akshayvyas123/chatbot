@@ -47,9 +47,7 @@ console.log("We are inside webhook");
    var b2 = JSON.stringify({
   
     
-   data:{
-   //"speech":"hi ",
-   //"displayText":"there is good news",
+  
  "facebook": {
     "text":"Tell me how do you feel?",
     "quick_replies":[
@@ -65,8 +63,7 @@ console.log("We are inside webhook");
       }
     ]
   }
-},
-    source : "text"
+
   
 
 });
