@@ -43,7 +43,7 @@ app.post('/webhook/', function (req, res)
 
  if(req.body.result.action == "feelings")
  {
-  
+  console.log("We are inside the feelings code ");
    var b2 = JSON.stringify({
     
     
