@@ -44,29 +44,17 @@ console.log("We are inside webhook");
  if(req.body.result.action == "feelings")
  {
   console.log("We are inside the feelings code ");
-   var b2 = JSON.stringify({
-  
+   
     
-  
- "facebook": {
-    "text":"Tell me how do you feel?",
-    "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"Happy",
-        "payload":"#receipt 1"
-      },
-        {
-        "content_type":"text",
-        "title":"Sad",
-        "payload":"#receipt 0"
-      }
-    ]
-  }
-
+ var b2 = JSON.stringify({
+    
+        "speech":"Your flight is booked in the pay later mode",
+         "displayText":"there is good news"
   
 
 });
+  
+
    
 res.end(b2);
   
