@@ -41,6 +41,40 @@ app.post('/webhook/', function (req, res)
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
 
+ if(req.body.result.action == "feelings")
+ {
+  
+   var b2 = JSON.stringify({
+    
+    
+    data:{
+
+  "facebook": {
+    "text":"Tell me how do you feel?",
+    "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Happy",
+        "payload":"#receipt 1"
+      },
+        {
+        "content_type":"text",
+        "title":"Sad",
+        "payload":"#receipt 0"
+      }
+    ]
+  }
+},
+    source : "text"
+  
+
+});
+   
+res.end(b2);
+  
+ }
+ 
+ 
     if(req.body.result.action == "bookflight")
     {
      a1=req.body.result.parameters.airportcode1;
