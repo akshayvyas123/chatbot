@@ -46,7 +46,7 @@ console.log("We are inside webhook");
   console.log("We are inside the feelings code ");
    
     
- var b2 = JSON.stringify({
+ var v1 = JSON.stringify({
     
         "speech":"Your flight is booked in the pay later mode",
          "displayText":"there is good news"
@@ -56,7 +56,7 @@ console.log("We are inside webhook");
   
 
    
-res.end(b2);
+res.end(v1);
   
  }
  
